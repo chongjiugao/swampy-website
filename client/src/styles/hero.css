@@ -1,0 +1,209 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-light) 0%,
+    var(--color-blue) 50%,
+    var(--color-cream) 100%
+  );
+  overflow: hidden;
+  padding-top: var(--nav-height);
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-md);
+  z-index: 2;
+  padding: var(--space-md);
+}
+
+/* Swampy's photo */
+.hero__image-wrapper {
+  position: relative;
+  width: 280px;
+  height: 280px;
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-full);
+  border: 6px solid var(--color-white);
+  box-shadow: var(--shadow-lg);
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Lily pad decorations */
+.hero__lily-pad {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50% 50% 50% 0;
+  background: var(--color-primary);
+  opacity: 0.3;
+}
+
+.hero__lily-pad--1 {
+  bottom: -10px;
+  left: -20px;
+  animation: float 5s ease-in-out infinite 0.5s;
+}
+
+.hero__lily-pad--2 {
+  top: -10px;
+  right: -15px;
+  width: 35px;
+  height: 35px;
+  animation: float 6s ease-in-out infinite 1s;
+}
+
+/* Text */
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.hero__greeting {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-primary-dark);
+  opacity: 0.8;
+}
+
+.hero__title {
+  font-size: clamp(3rem, 8vw, 5rem);
+  color: var(--color-primary-dark);
+  text-shadow: 2px 2px 0 rgba(168, 213, 162, 0.5);
+}
+
+.hero__subtitle {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  color: var(--color-text-light);
+  font-weight: 500;
+  max-width: 400px;
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+  padding: 12px 28px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+.hero__cta-arrow {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+/* Floating bubbles */
+.hero__bubbles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: rise linear infinite;
+}
+
+.bubble--1 { width: 20px; height: 20px; left: 10%; animation-duration: 8s; animation-delay: 0s; }
+.bubble--2 { width: 30px; height: 30px; left: 30%; animation-duration: 10s; animation-delay: 2s; }
+.bubble--3 { width: 15px; height: 15px; left: 55%; animation-duration: 7s; animation-delay: 4s; }
+.bubble--4 { width: 25px; height: 25px; left: 75%; animation-duration: 9s; animation-delay: 1s; }
+.bubble--5 { width: 18px; height: 18px; left: 90%; animation-duration: 11s; animation-delay: 3s; }
+
+@keyframes rise {
+  0% {
+    bottom: -50px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    bottom: 110%;
+    opacity: 0;
+  }
+}
+
+/* Wave separator */
+.hero__wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.hero__wave svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .hero__content {
+    flex-direction: row;
+    text-align: left;
+    gap: var(--space-lg);
+  }
+
+  .hero__text {
+    align-items: flex-start;
+  }
+
+  .hero__image-wrapper {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero__image-wrapper {
+    width: 380px;
+    height: 380px;
+  }
+}

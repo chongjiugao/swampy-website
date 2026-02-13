@@ -1,0 +1,42 @@
+.funfacts {
+  background-color: var(--color-white);
+}
+
+.funfacts__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
+
+.funfacts__card {
+  background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-white) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.funfacts__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.funfacts__icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.funfacts__card-title {
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+  font-size: 1.15rem;
+}
+
+.funfacts__card p {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 auto;
+}

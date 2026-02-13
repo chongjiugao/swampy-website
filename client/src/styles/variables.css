@@ -1,0 +1,39 @@
+:root {
+  /* Colors - derived from Swampy's photo */
+  --color-primary: #5CAF6E;
+  --color-primary-light: #A8D5A2;
+  --color-primary-dark: #2D5A3D;
+  --color-cream: #FFF8E7;
+  --color-blue: #B8D8E8;
+  --color-yellow: #FFE5A0;
+  --color-white: #FFFFFE;
+  --color-text: #2D5A3D;
+  --color-text-light: #5a7d66;
+  --color-border: #e0eed4;
+
+  /* Typography */
+  --font-heading: 'Quicksand', sans-serif;
+  --font-body: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 50%;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(45, 90, 61, 0.08);
+  --shadow-md: 0 4px 16px rgba(45, 90, 61, 0.12);
+  --shadow-lg: 0 8px 32px rgba(45, 90, 61, 0.16);
+
+  /* Layout */
+  --max-width: 1200px;
+  --nav-height: 70px;
+}
